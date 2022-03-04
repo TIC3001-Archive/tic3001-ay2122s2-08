@@ -1,14 +1,14 @@
 package org.tic.archb;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CircularShift {
-    private List<String> wordsToIgnore = new ArrayList<>();
+    private final List<String> wordsToIgnore = new ArrayList<>(Arrays.asList("a","of","to","with","the"));
     private List<String> shiftedTitles = new ArrayList<>();
 
-    public CircularShift(Titles titles) {
-        setWordsToIgnore(titles.getIgnoredWords());
+    public CircularShift() {
     }
 
     public void generateShift(Titles titles) {
@@ -44,10 +44,6 @@ public class CircularShift {
                 str [j - 1] = temp;
             }
         }
-    }
-
-    public void setWordsToIgnore(List<String> words) {
-        wordsToIgnore = words;
     }
 
     public List<String> getShiftedTitles() {

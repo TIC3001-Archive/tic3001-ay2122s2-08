@@ -16,7 +16,7 @@ public class Master {
         Titles titles = new Titles();
         fileReader.populateTitles(titles);
 
-        CircularShift circularShift = new CircularShift(titles);
+        CircularShift circularShift = new CircularShift();
         circularShift.generateShift(titles);
 
         Alphabetiser alphaShifter = new Alphabetiser(circularShift);
