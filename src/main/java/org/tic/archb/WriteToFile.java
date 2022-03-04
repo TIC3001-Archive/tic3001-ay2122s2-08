@@ -12,10 +12,6 @@ public class WriteToFile {
         setOutput(file);
     }
 
-    public void setOutput(String output) {
-        this.fileName = output;
-    }
-
     public void writeOutput(Alphabetiser shifter) {
         try {
             File myObj = new File(fileName);
@@ -32,7 +28,7 @@ public class WriteToFile {
         }
     }
 
-    public static void mainWriter(List<String> listTitleSorted, String outputFile) {
+    private static void mainWriter(List<String> listTitleSorted, String outputFile) {
         try {
             FileWriter myWriter = new FileWriter(outputFile,false);
             for(String titles:listTitleSorted){
@@ -44,5 +40,9 @@ public class WriteToFile {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+    }
+
+    private void setOutput(String output) {
+        this.fileName = output;
     }
 }

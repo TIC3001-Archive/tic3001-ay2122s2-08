@@ -8,8 +8,7 @@ public class CircularShift {
     private final List<String> wordsToIgnore = new ArrayList<>(Arrays.asList("a","of","to","with","the"));
     private List<String> shiftedTitles = new ArrayList<>();
 
-    public CircularShift() {
-    }
+    //public CircularShift() {}
 
     public void generateShift(Titles titles) {
         for (String title : titles.getTitles()) {

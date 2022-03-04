@@ -6,9 +6,7 @@ import java.util.List;
 public class Titles {
     private List<String> titles;
 
-    public Titles() {
-        titles = new ArrayList<>();
-    }
+    //public Titles() {}
 
     public void setTitles(List<String> characters) {
         titles = characters;

@@ -13,10 +13,6 @@ public class FileReader {
         setInput(fileName);
     }
 
-    public void setInput(String input) {
-        this.fileName = input;
-    }
-
     public void populateTitles(Titles titles) {
         List<String> list =new ArrayList<>();
 
@@ -35,5 +31,9 @@ public class FileReader {
             e.printStackTrace();
             System.exit(1);
         }
+    }
+
+    private void setInput(String input) {
+        this.fileName = input;
     }
 }
