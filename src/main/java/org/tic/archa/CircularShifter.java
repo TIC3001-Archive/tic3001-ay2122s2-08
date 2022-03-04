@@ -6,35 +6,35 @@ import java.util.List;
 
 public class CircularShifter {
 
-    private static List<String> nameList = new ArrayList<>(Arrays.asList("a","of","to","with","the"));
+    private static final List<String> nameList = new ArrayList<>(Arrays.asList("a","of","to","with","the"));
 
     public static List<String> Shift(List<String> listOfTitles) {
         List<String> newList = new ArrayList<>();
         for (String title : listOfTitles) {
-            String[] result = title.split(" ");
-            newList.addAll(checkForValidTile(result));
+            newList.addAll(checkForValidTile(title));
         }
         return newList;
     }
 
-    public static List<String> checkForValidTile(String[] title){
-        List<String> list = new ArrayList<>();
+    private static List<String> checkForValidTile(String title){
+        List<String> validTitles = new ArrayList<>();
+        String[] splitedTitle = title.split(" ");
 
-        for(int i = 0; i < title.length; i++){
-            if(!(nameList.contains(title[0]))){
+        for(int i = 0; i < splitedTitle.length; i++){
+            if(!(nameList.contains(splitedTitle[0]))){
                 StringBuilder sb = new StringBuilder();
-                for (String s : title) {
+                for (String s : splitedTitle) {
                     sb.append(s).append(" ");
                 }
                 String str = sb.toString();
-                list.add(str);
+                validTitles.add(str);
             }
-            shiftLeft(title);
+            shiftTitleLeft(splitedTitle);
         }
-        return list;
+        return validTitles;
     }
 
-    public static void shiftLeft(String[] str){
+    private static void shiftTitleLeft(String[] str){
         for (int i = 0; i < 1; i++) {
             for (int j = str .length - 1; j > 0; j--) {
                 String temp = str [j];

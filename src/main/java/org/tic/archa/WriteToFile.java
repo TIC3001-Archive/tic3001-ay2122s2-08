@@ -20,7 +20,7 @@ public class WriteToFile {
             e.printStackTrace();
         }
     }
-    public static void mainWriter(List<String> listTitleSorted,String outputFile) {
+    private static void mainWriter(List<String> listTitleSorted,String outputFile) {
         try {
             FileWriter myWriter = new FileWriter(outputFile,false);
             for(String titles:listTitleSorted){

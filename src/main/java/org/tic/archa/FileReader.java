@@ -8,7 +8,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
 
 public class FileReader {
     public static List<String> readFile(String inputFile){
-        List<String> list =new ArrayList<String>();
+        List<String> list =new ArrayList<>();
 
         try {
             File myObj = new File(inputFile);
