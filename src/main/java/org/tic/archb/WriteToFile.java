@@ -17,10 +17,10 @@ public class WriteToFile {
             File myObj = new File(fileName);
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
-                mainWriter(shifter.getSortedTitles(),fileName);
+                fileWriterMain(shifter.getSortedTitles(),fileName);
             } else {
                 System.out.println("File already exists.");
-                mainWriter(shifter.getSortedTitles(),fileName);
+                fileWriterMain(shifter.getSortedTitles(),fileName);
             }
         } catch (IOException e) {
             System.out.println("An error occurred.");
@@ -28,7 +28,7 @@ public class WriteToFile {
         }
     }
 
-    private static void mainWriter(List<String> listTitleSorted, String outputFile) {
+    private static void fileWriterMain(List<String> listTitleSorted, String outputFile) {
         try {
             FileWriter myWriter = new FileWriter(outputFile,false);
             for(String titles:listTitleSorted){
