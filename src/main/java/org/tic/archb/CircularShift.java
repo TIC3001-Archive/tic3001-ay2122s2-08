@@ -3,9 +3,10 @@ package org.tic.archb;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class CircularShift {
-    private final List<String> wordsToIgnore = new ArrayList<>(Arrays.asList("a","of","to","with","the"));
+    private final List<String> wordsToIgnore = new ArrayList<>(Arrays.asList("a","of","to","with","the","and","in","at","til","vs"));
     private List<String> shiftedTitles = new ArrayList<>();
 
     //public CircularShift() {}
@@ -22,7 +23,7 @@ public class CircularShift {
         List<String> nameList = new ArrayList<>(wordsToIgnore);
 
         for(int i = 0; i < title.length; i++){
-            if(!(nameList.contains(title[0]))){
+            if(!(nameList.contains(title[0].toLowerCase(Locale.ROOT)))){
                 StringBuilder sb = new StringBuilder();
                 for (String s : title) {
                     sb.append(s).append(" ");

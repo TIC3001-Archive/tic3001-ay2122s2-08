@@ -3,10 +3,11 @@ package org.tic.archa;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class CircularShifter {
 
-    private static final List<String> nameList = new ArrayList<>(Arrays.asList("a","of","to","with","the"));
+    private static final List<String> nameList = new ArrayList<>(Arrays.asList("a","of","to","with","the","and","in","at","til","vs"));
 
     public static List<String> Shift(List<String> listOfTitles) {
         List<String> newList = new ArrayList<>();
@@ -21,7 +22,7 @@ public class CircularShifter {
         String[] splitedTitle = title.split(" ");
 
         for(int i = 0; i < splitedTitle.length; i++){
-            if(!(nameList.contains(splitedTitle[0]))){
+            if(!(nameList.contains(splitedTitle[0].toLowerCase(Locale.ROOT)))){
                 StringBuilder sb = new StringBuilder();
                 for (String s : splitedTitle) {
                     sb.append(s).append(" ");
