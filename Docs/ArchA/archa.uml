@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.tic.archa</OriginalElement>
+  <nodes>
+    <node x="403.75" y="-131.0">org.tic.archa.Main</node>
+    <node x="0.0" y="22.0">org.tic.archa.Alphabetiser</node>
+    <node x="240.0" y="22.0">org.tic.archa.FileReader</node>
+    <node x="486.0" y="11.0">org.tic.archa.WriteToFile</node>
+    <node x="805.0" y="0.0">org.tic.archa.CircularShifter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.tic.archa.Main" target="org.tic.archa.FileReader" relationship="DEPENDENCY">
+      <point x="-26.75" y="38.0" />
+      <point x="105.5" y="-38.0" />
+    </edge>
+    <edge source="org.tic.archa.Main" target="org.tic.archa.CircularShifter" relationship="DEPENDENCY">
+      <point x="81.5" y="0.0" />
+      <point x="949.0" y="-93.0" />
+      <point x="0.0" y="-60.0" />
+    </edge>
+    <edge source="org.tic.archa.Main" target="org.tic.archa.WriteToFile" relationship="DEPENDENCY">
+      <point x="8.25" y="38.0" />
+      <point x="-142.0" y="-49.0" />
+    </edge>
+    <edge source="org.tic.archa.Main" target="org.tic.archa.Alphabetiser" relationship="DEPENDENCY">
+      <point x="-81.5" y="0.0" />
+      <point x="110.0" y="-93.0" />
+      <point x="0.0" y="-38.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="546.5" y="-5.5" />
+  <SelectedNodes>
+    <node>org.tic.archa.Main</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
