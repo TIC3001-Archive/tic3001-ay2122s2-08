@@ -3,7 +3,7 @@ tic3001-ay2122s2-08 created by GitHub Classroom
 
 ### Running the program
 
-####KWIC Index, Pipe and Filter approach
+#### KWIC Index, Pipe and Filter approach
 1. Navigate to ~\out\artifacts\archa to find the jar file tic3001-ay2122s2-08.jar
 2. The program accepts a path to the input text file as argument. We have provided sample test files in ~\Assignment1Testcases. The output file will be placed in the same folder as the input.
 ```bash
