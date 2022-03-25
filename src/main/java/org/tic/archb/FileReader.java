@@ -6,25 +6,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileReader {
-    private String fileName;
 
-    public FileReader(String fileName) {
-        setInput(fileName);
+public class FileReader {
+    private String titleFileName;
+
+    public FileReader(String TfileName) {
+        setInput(TfileName);
     }
 
-    public void populateTitles(Titles titles) {
+    public void populateWords(Words words) {
         List<String> list =new ArrayList<>();
 
         try {
-            File myObj = new File(this.fileName);
+            File myObj = new File(this.titleFileName);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 list.add(data);
             }
             myReader.close();
-            titles.setTitles(list);
+            words.setWords(list);
         }
         catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
@@ -33,7 +34,7 @@ public class FileReader {
         }
     }
 
-    private void setInput(String input) {
-        this.fileName = input;
+    public void setInput(String titleFileName) {
+        this.titleFileName = titleFileName;
     }
 }

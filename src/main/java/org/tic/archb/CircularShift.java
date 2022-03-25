@@ -1,29 +1,52 @@
 package org.tic.archb;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CircularShift {
-    private final List<String> wordsToIgnore = new ArrayList<>(Arrays.asList("a","of","to","with","the","and","in","at","til","vs"));
+    private List<String> wordsToIgnore = new ArrayList<>();
+    private List<String> wordsRequired = new ArrayList<>();
     private List<String> shiftedTitles = new ArrayList<>();
+    private List<String> mainTitles = new ArrayList<>();
 
-    //public CircularShift() {}
+    public CircularShift(Words titles, Words ignoreFilter, Words requiredFilter) {
+        this.wordsToIgnore = ignoreFilter.getWords().stream().map(String::toLowerCase).collect(Collectors.toList());;
+        this.wordsRequired = requiredFilter.getWords();
+        this.mainTitles = titles.getWords();
+    }
 
-    public void generateShift(Titles titles) {
-        for (String title : titles.getTitles()) {
+    public void generateShift() {
+        checkForRequireWord();
+
+        for (String title : mainTitles) {
             String[] result = title.split(" ");
             shiftedTitles.addAll(checkForValidTitle(result));
         }
     }
 
+    private void checkForRequireWord(){
+        if(!(wordsRequired.isEmpty())){
+            List<String> list = new ArrayList<>();
+
+            for(String title : mainTitles){
+                for(String required : wordsRequired){
+                    if((title.toLowerCase(Locale.ROOT)).contains(required.toLowerCase(Locale.ROOT))){
+                        if(doubleCheckIfWordEqualWord(title,required)){
+                            list.add(title);
+                            break;
+                        }
+                    }
+                }
+            }
+            mainTitles = list;
+        }
+    }
+
     private List<String> checkForValidTitle(String[] title){
         List<String> list = new ArrayList<>();
-        List<String> nameList = new ArrayList<>(wordsToIgnore);
 
         for(int i = 0; i < title.length; i++){
-            if(!(nameList.contains(title[0].toLowerCase(Locale.ROOT)))){
+            if(!(wordsToIgnore.contains(title[0].toLowerCase(Locale.ROOT)))){
                 StringBuilder sb = new StringBuilder();
                 for (String s : title) {
                     sb.append(s).append(" ");
@@ -44,6 +67,15 @@ public class CircularShift {
                 str [j - 1] = temp;
             }
         }
+    }
+
+    private boolean doubleCheckIfWordEqualWord(String title, String word){
+        for(String words: title.split(" ")){
+            if(Objects.equals(words.toLowerCase(Locale.ROOT), word)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public List<String> getShiftedTitles() {
