@@ -30,6 +30,7 @@ public class Master {
         Words requiredWords = new Words();
         readRequiredWordsFile.populateWords(requiredWords);
 
+        //Filters out required words in title, then removes ignored words
         CircularShift circularShift = new CircularShift(titles,ignoreWords,requiredWords);
         circularShift.generateShift();
 

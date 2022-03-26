@@ -12,7 +12,6 @@ public class CircularShifter {
     private static void setIgnoredWords(String blablabla){
         ignoredWordsList = FileReader.readFile(blablabla);
     }
-
     private static void setMustHaveWords(String blablabla){
         mustHaveWordsList = FileReader.readFile(blablabla);
     }

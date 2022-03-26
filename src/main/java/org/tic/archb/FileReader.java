@@ -7,13 +7,14 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class FileReader {
+public class FileReader implements FileInput {
     private String titleFileName;
 
-    public FileReader(String TfileName) {
-        setInput(TfileName);
+    public FileReader(String fileName) {
+        setInput(fileName);
     }
 
+    @Override
     public void populateWords(Words words) {
         List<String> list =new ArrayList<>();
 
