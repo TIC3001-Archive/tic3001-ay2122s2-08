@@ -20,10 +20,10 @@ public class FileReader {
             myReader.close();
         }
         catch (FileNotFoundException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-                System.exit(1);
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            System.exit(1);
         }
-       return list;
+        return list;
     }
 }
