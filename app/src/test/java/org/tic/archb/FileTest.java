@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.tic.archb.FileReader;
 import org.tic.archb.Words;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +17,7 @@ import static org.junit.Assert.assertTrue;
 
 public class FileTest {
     @Test public void ReadTitleFile() {
-        String inputFile = "/Users/gopal/IdeaProjects/tic3001-ay2122s2-08/Assignment2Testcases/Test3/Titles3.txt";
+        String inputFile = "../../tic3001-ay2122s2-08/Assignment2Testcases/Test3/Titles3.txt";
         List<String> list = new ArrayList<>(Arrays.asList("Back to the Future", "Desperado", "Night at the Museum",
                 "Robocop", "Ghostbusters", "Cool World", "donnie Darko", "Double Indemnity"));
 
