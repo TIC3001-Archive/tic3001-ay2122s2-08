@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.tic.archb.FileReader;
 import org.tic.archb.Words;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +23,6 @@ public class FileTest {
         FileReader readInputFile = new FileReader(inputFile);
         Words titles = new Words();
         readInputFile.populateWords(titles);
-
         assertEquals(list,titles.getWords());
     }
 }
