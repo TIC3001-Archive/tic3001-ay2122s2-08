@@ -35,6 +35,7 @@ public class FileReader implements FileInput {
         }
     }
 
+    @Override
     public void setInput(String titleFileName) {
         this.titleFileName = titleFileName;
     }
