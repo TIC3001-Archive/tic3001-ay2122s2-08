@@ -6,6 +6,7 @@ package org.tic.archb;
 import org.junit.Test;
 import org.tic.archb.FileReader;
 import org.tic.archb.Words;
+import org.tic.archb.CircularShift;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,5 +55,7 @@ public class FileTest {
         readInputFile.populateWords(titles);
         assertEquals(list,titles.getWords());
     }
+
+
 
 }

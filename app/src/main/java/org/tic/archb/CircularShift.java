@@ -10,7 +10,7 @@ public class CircularShift {
     private List<String> mainTitles = new ArrayList<>();
 
     public CircularShift(Words titles, Words ignoreFilter, Words requiredFilter) {
-        this.wordsToIgnore = ignoreFilter.getWords().stream().map(String::toLowerCase).collect(Collectors.toList());;
+        this.wordsToIgnore = ignoreFilter.getWords().stream().map(String::toLowerCase).collect(Collectors.toList());
         this.wordsRequired = requiredFilter.getWords();
         this.mainTitles = titles.getWords();
     }
