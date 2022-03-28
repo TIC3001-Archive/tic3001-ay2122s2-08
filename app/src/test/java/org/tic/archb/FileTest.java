@@ -11,8 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class FileTest {
     @Test public void ReadTitleFile() {
@@ -25,4 +24,35 @@ public class FileTest {
         readInputFile.populateWords(titles);
         assertEquals(list,titles.getWords());
     }
+
+    @Test public void ReadIgnoreFile() {
+        String inputFile = "../../tic3001-ay2122s2-08/Assignment2Testcases/Test3/Ignored3.txt";
+        List<String> list = new ArrayList<>(Arrays.asList("cool" , "a" , "the" , "to" , "donniE"));
+
+        FileReader readIgnoreFile = new FileReader(inputFile);
+        Words ignored = new Words();
+        readIgnoreFile.populateWords(ignored);
+        assertEquals(list,ignored.getWords());
+    }
+
+    @Test public void ReadRequiredFile() {
+        String inputFile = "../../tic3001-ay2122s2-08/Assignment2Testcases/Test3/Required3.txt";
+        List<String> list = new ArrayList<>(Arrays.asList("world" , "ghost" , "robocop"));
+
+        FileReader readRequiredFile = new FileReader(inputFile);
+        Words required = new Words();
+        readRequiredFile.populateWords(required);
+        assertEquals(list,required.getWords());
+    }
+
+    @Test public void ReadEmptyFile() {
+        String inputFile = "../../tic3001-ay2122s2-08/Assignment2Testcases/Test2/Required2.txt";
+        List<String> list = new ArrayList<>();
+
+        FileReader readInputFile = new FileReader(inputFile);
+        Words titles = new Words();
+        readInputFile.populateWords(titles);
+        assertEquals(list,titles.getWords());
+    }
+
 }
