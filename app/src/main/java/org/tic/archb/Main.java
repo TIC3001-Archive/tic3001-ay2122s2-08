@@ -24,7 +24,7 @@ public class Main {
 
 
 
-        String inputFile = "/Users/gopal/Document/TIC3001/Assignment3/ListOfFiles4.txt";
+        String inputFile = "/Users/gopal/Document/TIC3001/Assignment3/ListOfFiles.txt";
 
         // Read main file
         FileReader readInputFile = new FileReader(inputFile);
@@ -36,62 +36,21 @@ public class Main {
 
 
         Scanner scan = new Scanner(System.in);
-        String userInput = scan.nextLine();
-        while(!userInput.equals("q") ){
+        String userInput = scan.nextLine().toLowerCase(Locale.ROOT);
 
-            if ((userInput.split(" ")).length == 1) {
-                // prevent duplicate search
-                if(checkIfSearchWordAlreadyExsist(searchedWords,userInput.toLowerCase(Locale.ROOT))) {
-                    searchedWords.add(userInput.toLowerCase(Locale.ROOT));
+        while(!userInput.equals("q") ){                                                               // Terminates at q or Q
+            if ((userInput.split(" ")).length == 1) {                                           // Checks for multiples words
+                if(WordAlreadyExist(searchedWords,userInput))  searchedWords.add(userInput);          //If new word, then add to list
+                for (String file : ListOfFiles.getWords()) {
+                    Master.runProgram2(file, ignoredWords, searchedWords); //Search on all inserted word
                 }
-                for (String file : ListOfFiles.getWords())  mySearch(file,ignoredWords,searchedWords);
             }
-            userInput = scan.nextLine();
+            userInput = scan.nextLine().toLowerCase(Locale.ROOT);
         }
-
         scan.close();
     }
 
-    static void mySearch( String inputFile, List<String> iw, List<String> sw){
-
-        FileReader readInputFile = new FileReader(inputFile);
-        Words titles = new Words();
-        readInputFile.populateWords(titles);
-
-        Words ignoreWords = new Words();
-        ignoreWords.setWords(iw);
-
-        Words requiredWords = new Words();
-        requiredWords.setWords(sw);
-
-        CircularShift circularShift = new CircularShift(titles,ignoreWords,requiredWords);
-        circularShift.generateShift();
-
-        Alphabetiser alphaShifter = new Alphabetiser(circularShift);
-
-        ArrangeAndPrintStuff(alphaShifter, inputFile, sw);
-
-    }
-
-    public static void ArrangeAndPrintStuff(Alphabetiser alphaShifter,String inputFile, List<String> sw){
-        List<String> finalWords = new ArrayList<>();
-        for (String SortedTitles: alphaShifter.getSortedTitles()){
-            for(String SearchWord: sw){
-                if(Objects.equals(SearchWord, SortedTitles.split(" ")[0].toLowerCase(Locale.ROOT))){
-                    finalWords.add(SortedTitles);
-                }
-            }
-        }
-
-        //Print stuff out
-        if (finalWords.size() != 0){
-            String[] filename = inputFile.split("/");
-            System.out.println(filename[(filename.length) -1]);
-            for(String stuff: finalWords) System.out.println(stuff);
-        }
-    }
-
-    public static  boolean checkIfSearchWordAlreadyExsist(List<String> searched, String searching){
+    public static  boolean WordAlreadyExist(List<String> searched, String searching){
         for(String xxx : searched){ if(Objects.equals(xxx,searching)) return false; }
         return true;
     }
