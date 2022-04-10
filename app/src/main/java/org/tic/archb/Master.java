@@ -6,19 +6,11 @@ import java.util.Locale;
 import java.util.Objects;
 
 public class Master {
-    private final String inputFile;
-    private final String outputFile;
-    private final String ignoredWordsFile;
-    private final String requiredWordsFile;
 
-    public Master(String inputFile, String outputFile, String ignored, String required) {
-        this.inputFile = inputFile;
-        this.outputFile = outputFile;
-        this.ignoredWordsFile = ignored;
-        this.requiredWordsFile = required;
+    public Master() {
     }
 
-    public void runProgram() {
+    public void runProgram(String inputFile, String outputFile, String ignored, String required) {
 
         // read and store titles
         FileReader readInputFile = new FileReader(inputFile);
@@ -26,12 +18,12 @@ public class Master {
         readInputFile.populateWords(titles);
 
         // read and store ignored words
-        FileReader readIgnoreWordsFile = new FileReader(ignoredWordsFile);
+        FileReader readIgnoreWordsFile = new FileReader(ignored);
         Words ignoreWords = new Words();
         readIgnoreWordsFile.populateWords(ignoreWords);
 
         // read and store required word
-        FileReader readRequiredWordsFile = new FileReader(requiredWordsFile);
+        FileReader readRequiredWordsFile = new FileReader(required);
         Words requiredWords = new Words();
         readRequiredWordsFile.populateWords(requiredWords);
 
@@ -46,7 +38,7 @@ public class Master {
 
     }
 
-    static void runProgram2(String inputFile, List<String> iw, List<String> sw){
+    public void runProgram2(String inputFile, List<String> iw, List<String> sw){
 
         FileReader readInputFile = new FileReader(inputFile);
         Words titles = new Words();
@@ -82,6 +74,7 @@ public class Master {
             String[] filename = inputFile.split("/");
             System.out.println(filename[(filename.length) -1]);
             for(String stuff: finalWords) System.out.println(stuff);
+            System.out.println("\r\n");
         }
     }
 

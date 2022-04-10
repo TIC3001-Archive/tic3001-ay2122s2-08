@@ -23,8 +23,8 @@ public class Main {
          */
 
 
-
-        String inputFile = "/Users/gopal/Document/TIC3001/Assignment3/ListOfFiles.txt";
+        String inputFile = args[0] ;
+        //String inputFile = "/Users/gopal/Document/TIC3001/Assignment3/test5/ListOfFiles.txt";
 
         // Read main file
         FileReader readInputFile = new FileReader(inputFile);
@@ -42,7 +42,8 @@ public class Main {
             if ((userInput.split(" ")).length == 1) {                                           // Checks for multiples words
                 if(WordAlreadyExist(searchedWords,userInput))  searchedWords.add(userInput);          //If new word, then add to list
                 for (String file : ListOfFiles.getWords()) {
-                    Master.runProgram2(file, ignoredWords, searchedWords); //Search on all inserted word
+                    Master abstractDateType = new Master();
+                    abstractDateType.runProgram2(file, ignoredWords, searchedWords); //Search on all inserted word
                 }
             }
             userInput = scan.nextLine().toLowerCase(Locale.ROOT);
