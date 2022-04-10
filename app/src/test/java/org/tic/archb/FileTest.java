@@ -4,9 +4,6 @@
 package org.tic.archb;
 
 import org.junit.Test;
-import org.tic.archb.FileReader;
-import org.tic.archb.Words;
-import org.tic.archb.CircularShift;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -73,7 +70,7 @@ public class FileTest {
         searchedWords.add(computer);          //If new word, then add to list
         for (String file : ListOfFiles.getWords()) {
             Master abstractDateType = new Master();
-            abstractDateType.runProgram2(file, ignoredWords, searchedWords); //Search on all inserted word
+            abstractDateType.Search(file, ignoredWords, searchedWords); //Search on all inserted word
         }
         return outContent;
     }

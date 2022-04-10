@@ -43,7 +43,7 @@ public class Main {
                 if(WordAlreadyExist(searchedWords,userInput))  searchedWords.add(userInput);          //If new word, then add to list
                 for (String file : ListOfFiles.getWords()) {
                     Master abstractDateType = new Master();
-                    abstractDateType.runProgram2(file, ignoredWords, searchedWords); //Search on all inserted word
+                    abstractDateType.Search(file, ignoredWords, searchedWords); //Search on all inserted word
                 }
             }
             userInput = scan.nextLine().toLowerCase(Locale.ROOT);

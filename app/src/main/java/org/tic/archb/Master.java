@@ -38,7 +38,7 @@ public class Master {
 
     }
 
-    public void runProgram2(String inputFile, List<String> iw, List<String> sw){
+    public void Search(String inputFile, List<String> iw, List<String> sw){
 
         FileReader readInputFile = new FileReader(inputFile);
         Words titles = new Words();
