@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/gopal/IdeaProjects/tic3001-ay2122s2-08/app/src/main/java/org/tic/archb</OriginalElement>
+  <nodes>
+    <node x="35.0" y="-1318.0">org.tic.archb.Words</node>
+    <node x="69.5" y="-1105.0">org.tic.archb.CircularShift</node>
+    <node x="470.0" y="-569.5">org.tic.archb.FileReader</node>
+    <node x="24.0" y="-340.0">org.tic.archb.Master</node>
+    <node x="171.5" y="-789.5">org.tic.archb.Alphabetiser</node>
+    <node x="47.5" y="-109.0">org.tic.archb.Main</node>
+    <node x="510.0" y="-778.0">org.tic.archb.FileInput</node>
+    <node x="70.5" y="-580.5">org.tic.archb.WriteToFile</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.tic.archb.FileReader" target="org.tic.archb.Words" relationship="DEPENDENCY">
+      <point x="-60.0" y="-49.5" />
+      <point x="520.0" y="-600.0" />
+      <point x="480.0" y="-600.0" />
+      <point x="480.0" y="-1200.0" />
+      <point x="150.0" y="-1200.0" />
+      <point x="30.0" y="38.0" />
+    </edge>
+    <edge source="org.tic.archb.CircularShift" target="org.tic.archb.Words" relationship="DEPENDENCY">
+      <point x="0.0" y="-105.0" />
+      <point x="260.0" y="-1140.0" />
+      <point x="480.0" y="-1140.0" />
+      <point x="480.0" y="-1200.0" />
+      <point x="150.0" y="-1200.0" />
+      <point x="30.0" y="38.0" />
+    </edge>
+    <edge source="org.tic.archb.Master" target="org.tic.archb.WriteToFile" relationship="CREATE">
+      <point x="0.0" y="-60.0" />
+      <point x="240.0" y="-420.0" />
+      <point x="220.0" y="-420.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="org.tic.archb.Master" target="org.tic.archb.Alphabetiser" relationship="CREATE">
+      <point x="0.0" y="-60.0" />
+      <point x="240.0" y="-420.0" />
+      <point x="400.0" y="-420.0" />
+      <point x="400.0" y="-600.0" />
+      <point x="340.0" y="-600.0" />
+      <point x="60.0" y="49.5" />
+    </edge>
+    <edge source="org.tic.archb.WriteToFile" target="org.tic.archb.Alphabetiser" relationship="DEPENDENCY">
+      <point x="0.0" y="-60.5" />
+      <point x="-60.0" y="49.5" />
+    </edge>
+    <edge source="org.tic.archb.Master" target="org.tic.archb.Words" relationship="CREATE">
+      <point x="0.0" y="-60.0" />
+      <point x="240.0" y="-420.0" />
+      <point x="40.0" y="-420.0" />
+      <point x="-80.0" y="38.0" />
+    </edge>
+    <edge source="org.tic.archb.Alphabetiser" target="org.tic.archb.CircularShift" relationship="DEPENDENCY">
+      <point x="0.0" y="-49.5" />
+      <point x="280.0" y="-820.0" />
+      <point x="160.0" y="-820.0" />
+      <point x="-100.0" y="105.0" />
+    </edge>
+    <edge source="org.tic.archb.Main" target="org.tic.archb.FileReader" relationship="CREATE">
+      <point x="0.0" y="-49.0" />
+      <point x="220.0" y="-180.0" />
+      <point x="580.0" y="-180.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="org.tic.archb.FileInput" target="org.tic.archb.Words" relationship="DEPENDENCY">
+      <point x="0.0" y="-38.0" />
+      <point x="620.0" y="-1140.0" />
+      <point x="480.0" y="-1140.0" />
+      <point x="480.0" y="-1200.0" />
+      <point x="150.0" y="-1200.0" />
+      <point x="30.0" y="38.0" />
+    </edge>
+    <edge source="org.tic.archb.Main" target="org.tic.archb.Master" relationship="CREATE">
+      <point x="0.0" y="-49.0" />
+      <point x="220.0" y="-180.0" />
+      <point x="240.0" y="-180.0" />
+      <point x="0.0" y="60.0" />
+    </edge>
+    <edge source="org.tic.archb.Master" target="org.tic.archb.CircularShift" relationship="CREATE">
+      <point x="0.0" y="-60.0" />
+      <point x="240.0" y="-420.0" />
+      <point x="440.0" y="-420.0" />
+      <point x="440.0" y="-800.0" />
+      <point x="360.0" y="-800.0" />
+      <point x="100.0" y="105.0" />
+    </edge>
+    <edge source="org.tic.archb.FileReader" target="org.tic.archb.FileInput" relationship="REALIZATION">
+      <point x="40.0" y="-49.5" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="org.tic.archb.Master" target="org.tic.archb.FileReader" relationship="CREATE">
+      <point x="0.0" y="-60.0" />
+      <point x="240.0" y="-360.0" />
+      <point x="580.0" y="-360.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="org.tic.archb.Main" target="org.tic.archb.Words" relationship="CREATE">
+      <point x="0.0" y="-49.0" />
+      <point x="220.0" y="-180.0" />
+      <point x="0.0" y="-180.0" />
+      <point x="0.0" y="-1020.0" />
+      <point x="40.0" y="-1020.0" />
+      <point x="-80.0" y="38.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.6970610399397137" showDependencies="true" x="364.9999999999999" y="-664.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
