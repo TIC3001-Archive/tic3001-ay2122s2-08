@@ -29,9 +29,9 @@ public class FileReader implements FileInput {
             words.setWords(list);
         }
         catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            System.out.println(e.getMessage());
             e.printStackTrace();
-            System.exit(1);
+            System.exit(0);
         }
     }
 

@@ -74,7 +74,7 @@ public class Master {
             String[] filename = inputFile.split("/");
             System.out.println(filename[(filename.length) -1]);
             for(String stuff: finalWords) System.out.println(stuff);
-            System.out.println("\r\n");
+            //System.out.println("\r\n");
         }
     }
 
