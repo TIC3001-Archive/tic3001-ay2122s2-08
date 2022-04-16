@@ -15,7 +15,8 @@ java -jar tic3001-ay2122s2-08.jar ~\Assignment1Testcases\testcase3
 #### KWIC Index Extended, Abstract Data Type approach
 For the extended ADT implemention, navigate to ~\out\artifacts\archb. User is required to provide an input file, ignore file, required file and an output folder as argument.
 ```bash
-java -jar tic3001-ay2122s2-08.jar ~\Assignment2Testcases\Test1\Titles1.txt ~\Assignment2Testcases\Test1\Ignored1.txt ~\Assignment2Testcases\Test1\Required1.txt ~\Assignment2Testcases\Test1
-java -jar tic3001-ay2122s2-08.jar ~\Assignment2Testcases\Test2\Titles2.txt ~\Assignment2Testcases\Test2\Ignored2.txt ~\Assignment2Testcases\Test1\Required2.txt ~\Assignment2Testcases\Test2
-java -jar tic3001-ay2122s2-08.jar ~\Assignment2Testcases\Test3\Titles3.txt ~\Assignment2Testcases\Test3\Ignored3.txt ~\Assignment2Testcases\Test3\Required3.txt ~\Assignment2Testcases\Test3
+java -jar tic3001-ay2122s2-08.jar /Users/gopal/Document/TIC3001/Assignment3/test1/ListOfFiles.txt
+java -jar tic3001-ay2122s2-08.jar /Users/gopal/Document/TIC3001/Assignment3/test2/ListOfFiles.txt
+java -jar tic3001-ay2122s2-08.jar /Users/gopal/Document/TIC3001/Assignment3/test7/ListOfFiles.txt
 ```
+Note: In your ListofFiles.txt, the full path of the title files will need to be provided.
